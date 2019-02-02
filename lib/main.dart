@@ -73,14 +73,26 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('Welcome to Flutter'),
         ),
-        body: Container(
-          child: Text('新华社北京2月1日电  中华民族传统节日农历春节来临之际，中共中央总书记、国家主席、中央军委主席习近平在北京看望慰问基层干部群众，考察北京冬奥会、冬残奥会筹办工作，向全国各族人民致以美好的新春祝福，祝各族人民幸福安康，祝伟大祖国繁荣吉祥。'),
-          alignment: Alignment.center,
-          color: Color(0xffc9c9c9),
-          width: 400.0,
-          height: 200.0,
-          margin: EdgeInsets.all(20.0),
-          padding: EdgeInsets.all(10.0),
+        body: Center( // 这里是要将整体居中放置
+          child: Container(
+            child: new Text('新华社北京2月1日电  中华民族传统节日农历春节来临之际，中共中央总书记、国家主席、中央军委主席习近平在北京看望慰问基层干部群众，考察北京冬奥会、冬残奥会筹办工作，向全国各族人民致以美好的新春祝福，祝各族人民幸福安康，祝伟大祖国繁荣吉祥。'),
+            alignment: Alignment.center,
+            // color: Color(0xffc9c9c9), // 使用装饰器decoration设置颜色的时候必须移除color属性，否则报错
+            width: 400.0,
+            height: 200.0,
+            margin: const EdgeInsets.all(20.0),
+            padding: const EdgeInsets.all(10.0), // 以上是设置容器的宽、高、颜色、内边距、外边距、内容对其方式
+            decoration: new BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  const Color(0xFF3366FF),
+                  const Color(0xFF00CCFF)
+                ],
+                begin: const FractionalOffset(0.0, 0.0),
+                tileMode: TileMode.clamp
+              )
+            ),
+          ),
         ),
       ),
     );
