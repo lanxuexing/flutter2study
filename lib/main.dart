@@ -368,6 +368,48 @@
 /**
  * 10.Column Widget
  */
+// import 'package:flutter/material.dart';
+
+// void main() => runApp(MyApp());
+
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Flutter Column Demo',
+//       home: Scaffold(
+//         appBar: AppBar(
+//           title: Text('Welcome to Flutter'),
+//         ),
+//         body: Center(
+//           child: Column(
+//             crossAxisAlignment: CrossAxisAlignment.center,
+//             mainAxisAlignment: MainAxisAlignment.center,
+//             children: <Widget>[
+//               ListTile(
+//                 title: Text('知否知否应是绿肥红瘦'),
+//                 subtitle: Text('赵丽颖冯绍峰琴瑟和鸣'),
+//               ),
+//               ListTile(
+//                 title: Text('怒晴湘西'),
+//                 subtitle: Text('改编自鬼吹灯 潘粤明闯瓶山'),
+//               ),
+//               ListTile(
+//                 title: Text('小女花不弃'),
+//                 subtitle: Text('林依晨张彬彬甜宠蜜恋暖爱来袭'),
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+
+/**
+ * 11.Stack Widget
+ */
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -375,31 +417,35 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var stack = new Stack(
+      alignment: const FractionalOffset(0.1, 0.5),
+      children: <Widget>[
+        CircleAvatar(
+          backgroundImage: NetworkImage('https://avatars2.githubusercontent.com/u/20652750?s=460&v=4'),
+          radius: 100.0,
+        ),
+        Container(
+          decoration: BoxDecoration(
+            color: Colors.transparent
+          ),
+          padding: EdgeInsets.all(5.0),
+          child: Text(
+            'girl',
+            style: TextStyle(
+              color: Colors.black54
+            ),
+          ),
+        )
+      ],
+    );
     return MaterialApp(
-      title: 'Flutter Column Demo',
+      title: 'Flutter Stack Widget',
       home: Scaffold(
         appBar: AppBar(
           title: Text('Welcome to Flutter'),
         ),
         body: Center(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              ListTile(
-                title: Text('知否知否应是绿肥红瘦'),
-                subtitle: Text('赵丽颖冯绍峰琴瑟和鸣'),
-              ),
-              ListTile(
-                title: Text('怒晴湘西'),
-                subtitle: Text('改编自鬼吹灯 潘粤明闯瓶山'),
-              ),
-              ListTile(
-                title: Text('小女花不弃'),
-                subtitle: Text('林依晨张彬彬甜宠蜜恋暖爱来袭'),
-              ),
-            ],
-          ),
+          child: stack,
         ),
       ),
     );
