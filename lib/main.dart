@@ -456,6 +456,59 @@
 /**
  * 12.Positioned Widget
  */
+// import 'package:flutter/material.dart';
+
+// void main() => runApp(MyApp());
+
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     var stack = new Stack(
+//       children: <Widget>[
+//         CircleAvatar(
+//           backgroundImage: NetworkImage('https://avatars2.githubusercontent.com/u/20652750?s=460&v=4'),
+//           radius: 100.0,
+//         ),
+//         Positioned(
+//           top: 80.0,
+//           left: 10.0,
+//           child: Text(
+//             'sex',
+//             style: TextStyle(
+//               color: Colors.black54
+//             ),
+//           ),
+//         ),
+//         Positioned(
+//           bottom: 80.0,
+//           left: 10.0,
+//           child: Text(
+//             'girl',
+//             style: TextStyle(
+//               color: Colors.black54
+//             ),
+//           ),
+//         ),
+//       ],
+//     );
+//     return MaterialApp(
+//       title: 'Flutter Positioned Demo',
+//       home: Scaffold(
+//         appBar: AppBar(
+//           title: Text('Welcome to Flutter'),
+//         ),
+//         body: Center(
+//           child: stack,
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+
+/**
+ * 13.Card Widget
+ */
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -463,42 +516,33 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var stack = new Stack(
-      children: <Widget>[
-        CircleAvatar(
-          backgroundImage: NetworkImage('https://avatars2.githubusercontent.com/u/20652750?s=460&v=4'),
-          radius: 100.0,
-        ),
-        Positioned(
-          top: 80.0,
-          left: 10.0,
-          child: Text(
-            'sex',
-            style: TextStyle(
-              color: Colors.black54
-            ),
-          ),
-        ),
-        Positioned(
-          bottom: 80.0,
-          left: 10.0,
-          child: Text(
-            'girl',
-            style: TextStyle(
-              color: Colors.black54
-            ),
-          ),
-        ),
-      ],
-    );
     return MaterialApp(
-      title: 'Flutter Positioned Demo',
+      title: 'Flutter Card Demo',
       home: Scaffold(
         appBar: AppBar(
           title: Text('Welcome to Flutter'),
         ),
-        body: Center(
-          child: stack,
+        body: Card(
+          margin: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 450.0),
+          child: Column(
+            children: <Widget>[
+              ListTile(
+                leading: Icon(Icons.phone_iphone),
+                title: Text('知否知否应是绿肥红瘦'),
+                subtitle: Text('赵丽颖冯绍峰琴瑟和鸣'),
+              ),
+              ListTile(
+                leading: Icon(Icons.personal_video),
+                title: Text('怒晴湘西'),
+                subtitle: Text('改编自鬼吹灯 潘粤明闯瓶山'),
+              ),
+              ListTile(
+                leading: Icon(Icons.person_outline),
+                title: Text('小女花不弃'),
+                subtitle: Text('林依晨张彬彬甜宠蜜恋暖爱来袭'),
+              ),
+            ],
+          ),
         ),
       ),
     );
