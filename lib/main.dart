@@ -137,41 +137,133 @@
 // }
 
 /**
- * 5.ListView Widget
+ * 5.纵向ListView Widget
+ */
+// import 'package:flutter/material.dart';
+
+// void main() => runApp(MyApp());
+
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Flutter ListView Widget Demo',
+//       home: Scaffold(
+//         appBar: AppBar(
+//           title: Text('Welcome to Flutter')
+//         ),
+//         body: ListView(
+//           children: <Widget>[
+//             // 1.条目列表
+//             ListTile(
+//               leading: Icon(Icons.perm_camera_mic),
+//               title: Text('perm_camera_mic'),
+//             ),
+//             ListTile(
+//               leading: Icon(Icons.people_outline),
+//               title: Text('people_outline'),
+//             ),
+//             ListTile(
+//               leading: Icon(Icons.perm_device_information),
+//               title: Text('perm_device_information'),
+//             ),
+//             // 2.图片列表
+//             Image.network('http://jspang.com/static/upload/20181122/HyW5zTOSCOcwbPRcdRe0nazk.png'),
+//             Image.network('http://jspang.com/static/upload/20181122/M08DUCVSaNMs9RYeWU6s8FX3.png'),
+//             Image.network('http://jspang.com/static/upload/20181122/WBRmDXtAPF7vK-eXEwD1J9JF.png'),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+/**
+ * 6.横向ListView Widget
+ */
+// import 'package:flutter/material.dart';
+
+// void main() => runApp(MyApp());
+
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Flutter ListView Demo',
+//       home: Scaffold(
+//         appBar: AppBar(
+//           title: Text('Welcome to Flutter'),
+//         ),
+//         body: Center(
+//           child: Container(
+//             height: 200.0,
+//             child: MyScrollListView(),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// class MyScrollListView extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return ListView(
+//       scrollDirection: Axis.horizontal, // 设置横向滚动
+//       children: <Widget>[
+//         Container(
+//           width: 180.0,
+//           color: Colors.lightBlue,
+//         ),
+//         Container(
+//           width: 180.0,
+//           color: Colors.lightGreen,
+//         ),
+//         Container(
+//           width: 180.0,
+//           color: Colors.deepOrange,
+//         ),
+//         Container(
+//           width: 180.0,
+//           color: Colors.deepPurple,
+//         ),
+//       ],
+//     );
+//   }
+// }
+
+/**
+ * 7.动态ListView
  */
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(MyApp(
+  items: List<String>.generate(1000, (i) => 'This is Item $i')
+));
 
 class MyApp extends StatelessWidget {
+  // 接收参数
+  final List<String> items;
+  MyApp({
+    Key key,
+    @required this.items
+  }):super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter ListView Widget Demo',
+      title: 'Flutter ListView Demo',
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Welcome to Flutter')
+          title: Text('Welcome to Flutter'),
         ),
-        body: ListView(
-          children: <Widget>[
-            // 1.条目列表
-            ListTile(
-              leading: Icon(Icons.perm_camera_mic),
-              title: Text('perm_camera_mic'),
-            ),
-            ListTile(
-              leading: Icon(Icons.people_outline),
-              title: Text('people_outline'),
-            ),
-            ListTile(
-              leading: Icon(Icons.perm_device_information),
-              title: Text('perm_device_information'),
-            ),
-            // 2.图片列表
-            Image.network('http://jspang.com/static/upload/20181122/HyW5zTOSCOcwbPRcdRe0nazk.png'),
-            Image.network('http://jspang.com/static/upload/20181122/M08DUCVSaNMs9RYeWU6s8FX3.png'),
-            Image.network('http://jspang.com/static/upload/20181122/WBRmDXtAPF7vK-eXEwD1J9JF.png'),
-          ],
+        body: ListView.builder(
+          itemCount: items.length,
+          itemBuilder: (context, index) {
+            return ListTile(
+              title: Text('${items[index]}'),
+            );
+          },
         ),
       ),
     );
