@@ -509,40 +509,91 @@
 /**
  * 13.Card Widget
  */
+// import 'package:flutter/material.dart';
+
+// void main() => runApp(MyApp());
+
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Flutter Card Demo',
+//       home: Scaffold(
+//         appBar: AppBar(
+//           title: Text('Welcome to Flutter'),
+//         ),
+//         body: Card(
+//           margin: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 450.0),
+//           child: Column(
+//             children: <Widget>[
+//               ListTile(
+//                 leading: Icon(Icons.phone_iphone),
+//                 title: Text('知否知否应是绿肥红瘦'),
+//                 subtitle: Text('赵丽颖冯绍峰琴瑟和鸣'),
+//               ),
+//               ListTile(
+//                 leading: Icon(Icons.personal_video),
+//                 title: Text('怒晴湘西'),
+//                 subtitle: Text('改编自鬼吹灯 潘粤明闯瓶山'),
+//               ),
+//               ListTile(
+//                 leading: Icon(Icons.person_outline),
+//                 title: Text('小女花不弃'),
+//                 subtitle: Text('林依晨张彬彬甜宠蜜恋暖爱来袭'),
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+
+/**
+ * 14.Navigator
+ */
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(
+  MaterialApp(
+    title: 'Flutter Navigator Demo',
+    home: FirstScreen(),
+  )
+);
 
-class MyApp extends StatelessWidget {
+class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Card Demo',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Welcome to Flutter'),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('导航Demo'),
+      ),
+      body: Center(
+        child: RaisedButton(
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => SeondScreen()));
+          },
+          child: Text('查看课程详情'),
         ),
-        body: Card(
-          margin: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 450.0),
-          child: Column(
-            children: <Widget>[
-              ListTile(
-                leading: Icon(Icons.phone_iphone),
-                title: Text('知否知否应是绿肥红瘦'),
-                subtitle: Text('赵丽颖冯绍峰琴瑟和鸣'),
-              ),
-              ListTile(
-                leading: Icon(Icons.personal_video),
-                title: Text('怒晴湘西'),
-                subtitle: Text('改编自鬼吹灯 潘粤明闯瓶山'),
-              ),
-              ListTile(
-                leading: Icon(Icons.person_outline),
-                title: Text('小女花不弃'),
-                subtitle: Text('林依晨张彬彬甜宠蜜恋暖爱来袭'),
-              ),
-            ],
-          ),
+      ),
+    );
+  }
+}
+
+class SeondScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('课程详情'),
+      ),
+      body: Center(
+        child: RaisedButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: Text('返回课程'),
         ),
       ),
     );
