@@ -324,6 +324,50 @@
 /**
  * 9.Row Widget
  */
+// import 'package:flutter/material.dart';
+
+// void main() => runApp(MyApp());
+
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Flutter Row Demo',
+//       home: Scaffold(
+//         appBar: AppBar(
+//           title: Text('Welcome to Fultter'),
+//         ),
+//         body: Row(
+//           children: <Widget>[
+//             Expanded(
+//               child: RaisedButton(
+//                 onPressed: () {},
+//                 color: Colors.deepPurple,
+//                 child: Text('Purple Btn'),
+//               ),
+//             ),
+//             Expanded(
+//               child: RaisedButton(
+//               onPressed: () {},
+//               color: Colors.deepOrange,
+//               child: Text('Orange Btn'),
+//             )),
+//             Expanded(
+//               child: RaisedButton(
+//               onPressed: () {},
+//               color: Colors.greenAccent,
+//               child: Text('Accent Btn'),
+//             )),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+/**
+ * 10.Column Widget
+ */
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -332,33 +376,30 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Row Demo',
+      title: 'Flutter Column Demo',
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Welcome to Fultter'),
+          title: Text('Welcome to Flutter'),
         ),
-        body: Row(
-          children: <Widget>[
-            Expanded(
-              child: RaisedButton(
-                onPressed: () {},
-                color: Colors.deepPurple,
-                child: Text('Purple Btn'),
+        body: Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              ListTile(
+                title: Text('知否知否应是绿肥红瘦'),
+                subtitle: Text('赵丽颖冯绍峰琴瑟和鸣'),
               ),
-            ),
-            Expanded(
-              child: RaisedButton(
-              onPressed: () {},
-              color: Colors.deepOrange,
-              child: Text('Orange Btn'),
-            )),
-            Expanded(
-              child: RaisedButton(
-              onPressed: () {},
-              color: Colors.greenAccent,
-              child: Text('Accent Btn'),
-            )),
-          ],
+              ListTile(
+                title: Text('怒晴湘西'),
+                subtitle: Text('改编自鬼吹灯 潘粤明闯瓶山'),
+              ),
+              ListTile(
+                title: Text('小女花不弃'),
+                subtitle: Text('林依晨张彬彬甜宠蜜恋暖爱来袭'),
+              ),
+            ],
+          ),
         ),
       ),
     );
