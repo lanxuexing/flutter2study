@@ -102,6 +102,43 @@
 /**
  * 4.Image Widget
  */
+// import 'package:flutter/material.dart';
+
+// void main() => runApp(MyApp());
+
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Flutter Image Widget Demo',
+//       home: Scaffold(
+//         appBar: AppBar(
+//           title: Text('Welcome to Flutter'),
+//         ),
+//         body: Center(
+//           child: Container(
+//             child: Image.network(
+//               'https://avatars2.githubusercontent.com/u/20652750?s=460&v=4',
+//               width: 80.0,
+//               height: 80.0,
+//               // fit: BoxFit.fitHeight, // 填充属性
+//               color: Colors.lightBlue,
+//               colorBlendMode: BlendMode.overlay, // 混合颜色
+//               repeat: ImageRepeat.repeat, // 平铺属性，是否重复等
+//             ),
+//             width: 400.0,
+//             height: 200.0,
+//             color: Colors.deepOrange,
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+/**
+ * 5.ListView Widget
+ */
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -110,29 +147,33 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Image Widget Demo',
+      title: 'Flutter ListView Widget Demo',
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Welcome to Flutter'),
+          title: Text('Welcome to Flutter')
         ),
-        body: Center(
-          child: Container(
-            child: Image.network(
-              'https://avatars2.githubusercontent.com/u/20652750?s=460&v=4',
-              width: 80.0,
-              height: 80.0,
-              // fit: BoxFit.fitHeight, // 填充属性
-              color: Colors.lightBlue,
-              colorBlendMode: BlendMode.overlay, // 混合颜色
-              repeat: ImageRepeat.repeat, // 平铺属性，是否重复等
+        body: ListView(
+          children: <Widget>[
+            // 1.条目列表
+            ListTile(
+              leading: Icon(Icons.perm_camera_mic),
+              title: Text('perm_camera_mic'),
             ),
-            width: 400.0,
-            height: 200.0,
-            color: Colors.deepOrange,
-          ),
+            ListTile(
+              leading: Icon(Icons.people_outline),
+              title: Text('people_outline'),
+            ),
+            ListTile(
+              leading: Icon(Icons.perm_device_information),
+              title: Text('perm_device_information'),
+            ),
+            // 2.图片列表
+            Image.network('http://jspang.com/static/upload/20181122/HyW5zTOSCOcwbPRcdRe0nazk.png'),
+            Image.network('http://jspang.com/static/upload/20181122/M08DUCVSaNMs9RYeWU6s8FX3.png'),
+            Image.network('http://jspang.com/static/upload/20181122/WBRmDXtAPF7vK-eXEwD1J9JF.png'),
+          ],
         ),
       ),
     );
   }
-
 }
