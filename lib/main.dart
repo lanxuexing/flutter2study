@@ -410,6 +410,52 @@
 /**
  * 11.Stack Widget
  */
+// import 'package:flutter/material.dart';
+
+// void main() => runApp(MyApp());
+
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     var stack = new Stack(
+//       alignment: const FractionalOffset(0.1, 0.5),
+//       children: <Widget>[
+//         CircleAvatar(
+//           backgroundImage: NetworkImage('https://avatars2.githubusercontent.com/u/20652750?s=460&v=4'),
+//           radius: 100.0,
+//         ),
+//         Container(
+//           decoration: BoxDecoration(
+//             color: Colors.transparent
+//           ),
+//           padding: EdgeInsets.all(5.0),
+//           child: Text(
+//             'girl',
+//             style: TextStyle(
+//               color: Colors.black54
+//             ),
+//           ),
+//         )
+//       ],
+//     );
+//     return MaterialApp(
+//       title: 'Flutter Stack Widget',
+//       home: Scaffold(
+//         appBar: AppBar(
+//           title: Text('Welcome to Flutter'),
+//         ),
+//         body: Center(
+//           child: stack,
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+
+/**
+ * 12.Positioned Widget
+ */
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -418,28 +464,35 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var stack = new Stack(
-      alignment: const FractionalOffset(0.1, 0.5),
       children: <Widget>[
         CircleAvatar(
           backgroundImage: NetworkImage('https://avatars2.githubusercontent.com/u/20652750?s=460&v=4'),
           radius: 100.0,
         ),
-        Container(
-          decoration: BoxDecoration(
-            color: Colors.transparent
+        Positioned(
+          top: 80.0,
+          left: 10.0,
+          child: Text(
+            'sex',
+            style: TextStyle(
+              color: Colors.black54
+            ),
           ),
-          padding: EdgeInsets.all(5.0),
+        ),
+        Positioned(
+          bottom: 80.0,
+          left: 10.0,
           child: Text(
             'girl',
             style: TextStyle(
               color: Colors.black54
             ),
           ),
-        )
+        ),
       ],
     );
     return MaterialApp(
-      title: 'Flutter Stack Widget',
+      title: 'Flutter Positioned Demo',
       home: Scaffold(
         appBar: AppBar(
           title: Text('Welcome to Flutter'),
