@@ -270,9 +270,59 @@
 //   }
 // }
 
-
 /**
  * 8.GridView Widget
+ */
+// import 'package:flutter/material.dart';
+
+// void main() => runApp(MyApp());
+
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Flutter GridView Demo',
+//       home: Scaffold(
+//         appBar: AppBar(
+//           title: Text('Welcome to Flutter'),
+//         ),
+//         // 第一种：老写法
+//         // body: GridView.count(
+//         //   padding: EdgeInsets.all(10.0),
+//         //   crossAxisSpacing: 10.0,
+//         //   crossAxisCount: 3,
+//         //   children: <Widget>[
+//         //     Image.network('https://puui.qpic.cn/vcover_vt_pic/0/xmw2gfef226jygj1545625229/350'),
+//         //     Image.network('https://puui.qpic.cn/vcover_vt_pic/0/brq7blajvjhrcit1545356133/350'),
+//         //     Image.network('https://puui.qpic.cn/vcover_vt_pic/0/lupgsr321tvuj1a1548731403/350'),
+//         //     Image.network('https://puui.qpic.cn/vcover_vt_pic/0/3bwbuaw7zs547tk1543892332/350'),
+//         //     Image.network('https://puui.qpic.cn/vcover_vt_pic/0/m441e3rjq9kwpsc1531129675/350')
+//         //   ],
+//         // ),
+//         // 第二种：新写法
+//         body: GridView(
+//           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+//             crossAxisCount: 3,
+//             mainAxisSpacing: 5.0,
+//             crossAxisSpacing: 2.0,
+//             childAspectRatio: 0.7
+//           ),
+//           children: <Widget>[
+//             Image.network('https://puui.qpic.cn/vcover_vt_pic/0/xmw2gfef226jygj1545625229/350', fit: BoxFit.cover),
+//             Image.network('https://puui.qpic.cn/vcover_vt_pic/0/brq7blajvjhrcit1545356133/350', fit: BoxFit.cover),
+//             Image.network('https://puui.qpic.cn/vcover_vt_pic/0/lupgsr321tvuj1a1548731403/350', fit: BoxFit.cover),
+//             Image.network('https://puui.qpic.cn/vcover_vt_pic/0/3bwbuaw7zs547tk1543892332/350', fit: BoxFit.cover),
+//             Image.network('https://puui.qpic.cn/vcover_vt_pic/0/m441e3rjq9kwpsc1531129675/350', fit: BoxFit.cover),
+//             Image.network('https://puui.qpic.cn/vcover_vt_pic/0/brq7blajvjhrcit1545356133/350', fit: BoxFit.cover)
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+/**
+ * 9.Row Widget
  */
 import 'package:flutter/material.dart';
 
@@ -282,39 +332,32 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter GridView Demo',
+      title: 'Flutter Row Demo',
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Welcome to Flutter'),
+          title: Text('Welcome to Fultter'),
         ),
-        // 第一种：老写法
-        // body: GridView.count(
-        //   padding: EdgeInsets.all(10.0),
-        //   crossAxisSpacing: 10.0,
-        //   crossAxisCount: 3,
-        //   children: <Widget>[
-        //     Image.network('https://puui.qpic.cn/vcover_vt_pic/0/xmw2gfef226jygj1545625229/350'),
-        //     Image.network('https://puui.qpic.cn/vcover_vt_pic/0/brq7blajvjhrcit1545356133/350'),
-        //     Image.network('https://puui.qpic.cn/vcover_vt_pic/0/lupgsr321tvuj1a1548731403/350'),
-        //     Image.network('https://puui.qpic.cn/vcover_vt_pic/0/3bwbuaw7zs547tk1543892332/350'),
-        //     Image.network('https://puui.qpic.cn/vcover_vt_pic/0/m441e3rjq9kwpsc1531129675/350')
-        //   ],
-        // ),
-        // 第二种：新写法
-        body: GridView(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3,
-            mainAxisSpacing: 5.0,
-            crossAxisSpacing: 2.0,
-            childAspectRatio: 0.7
-          ),
+        body: Row(
           children: <Widget>[
-            Image.network('https://puui.qpic.cn/vcover_vt_pic/0/xmw2gfef226jygj1545625229/350', fit: BoxFit.cover),
-            Image.network('https://puui.qpic.cn/vcover_vt_pic/0/brq7blajvjhrcit1545356133/350', fit: BoxFit.cover),
-            Image.network('https://puui.qpic.cn/vcover_vt_pic/0/lupgsr321tvuj1a1548731403/350', fit: BoxFit.cover),
-            Image.network('https://puui.qpic.cn/vcover_vt_pic/0/3bwbuaw7zs547tk1543892332/350', fit: BoxFit.cover),
-            Image.network('https://puui.qpic.cn/vcover_vt_pic/0/m441e3rjq9kwpsc1531129675/350', fit: BoxFit.cover),
-            Image.network('https://puui.qpic.cn/vcover_vt_pic/0/brq7blajvjhrcit1545356133/350', fit: BoxFit.cover)
+            Expanded(
+              child: RaisedButton(
+                onPressed: () {},
+                color: Colors.deepPurple,
+                child: Text('Purple Btn'),
+              ),
+            ),
+            Expanded(
+              child: RaisedButton(
+              onPressed: () {},
+              color: Colors.deepOrange,
+              child: Text('Orange Btn'),
+            )),
+            Expanded(
+              child: RaisedButton(
+              onPressed: () {},
+              color: Colors.greenAccent,
+              child: Text('Accent Btn'),
+            )),
           ],
         ),
       ),
