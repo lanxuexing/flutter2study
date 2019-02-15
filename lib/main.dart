@@ -553,48 +553,101 @@
 /**
  * 14.Navigator
  */
+// import 'package:flutter/material.dart';
+
+// void main() => runApp(
+//   MaterialApp(
+//     title: 'Flutter Navigator Demo',
+//     home: FirstScreen(),
+//   )
+// );
+
+// class FirstScreen extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('导航Demo'),
+//       ),
+//       body: Center(
+//         child: RaisedButton(
+//           onPressed: () {
+//             Navigator.push(context, MaterialPageRoute(builder: (context) => SeondScreen()));
+//           },
+//           child: Text('查看课程详情'),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// class SeondScreen extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('课程详情'),
+//       ),
+//       body: Center(
+//         child: RaisedButton(
+//           onPressed: () {
+//             Navigator.pop(context);
+//           },
+//           child: Text('返回课程'),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+
+/**
+ * 15.Navigator Parmas
+ */
 import 'package:flutter/material.dart';
 
-void main() => runApp(
-  MaterialApp(
-    title: 'Flutter Navigator Demo',
-    home: FirstScreen(),
-  )
-);
+void main() => runApp(MyApp());
 
-class FirstScreen extends StatelessWidget {
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('导航Demo'),
-      ),
-      body: Center(
-        child: RaisedButton(
-          onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => SeondScreen()));
-          },
-          child: Text('查看课程详情'),
-        ),
+    return MaterialApp(
+      title: 'Flutter Navigator Params Demo',
+      home: ProductList(
+        products: List.generate(20, (i) => Product('商品 $i', '这是一个商品详情, 商品编号为: $i'))
       ),
     );
   }
 }
 
-class SeondScreen extends StatelessWidget {
+class Product {
+  final String title;
+  final String desc;
+  Product(this.title, this.desc);
+}
+
+class ProductList extends StatelessWidget {
+  final List<Product> products;
+
+  ProductList({
+    Key key,
+    @required this.products
+  }):super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('课程详情'),
+        title: Text('Welcome to Flutter'),
       ),
-      body: Center(
-        child: RaisedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: Text('返回课程'),
-        ),
+      body: ListView.builder(
+        itemCount: products.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            title: Text(products[index].title),
+            onTap: (){},
+          );
+        },
       ),
     );
   }
