@@ -797,18 +797,42 @@
 /**
  * 18.规则的底部导航栏
  */
+// import 'package:flutter/material.dart';
+// import 'demo01/bottom_navigator_bar.dart';
+
+// void main() => runApp(MyApp());
+
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'FLutter BottomNavigatorBar Demo',
+//       theme: ThemeData.light(),
+//       home: MyBottomNavigationBar(),
+//     );
+//   }
+// }
+
+
+/**
+ * 19.不规则的底部导航栏
+ */
 import 'package:flutter/material.dart';
-import 'demo01/bottom_navigator_bar.dart';
+import 'demo02/bottom_navigator_bar.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'FLutter BottomNavigatorBar Demo',
-      theme: ThemeData.light(),
-      home: MyBottomNavigationBar(),
+    return Container(
+      child: MaterialApp(
+        title: 'Flutter BottomNavigator Demo',
+        theme: ThemeData( //  自定义主题
+          primarySwatch: Colors.lightBlue
+        ),
+        home: MyBottomNavigatorBar(),
+      ),
     );
   }
 }
