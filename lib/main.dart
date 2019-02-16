@@ -759,7 +759,46 @@
 /**
  * 17.Static Images
  */
+// import 'package:flutter/material.dart';
+
+// void main() => runApp(MyApp());
+
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Static Images Demo',
+//       home: Scaffold(
+//         appBar: AppBar(
+//           title: Text('Welcome to Flutter'),
+//         ),
+//         body: Container(
+//           margin: EdgeInsets.all(20.0),
+//           child: Column(
+//             crossAxisAlignment: CrossAxisAlignment.center,
+//             children: <Widget>[
+//               Image.asset(
+//                 'images/015939.png',
+//                 width: 100.0,
+//               ),
+//               Image.asset(
+//                 'images/5020010.png',
+//                 width: 100.0,
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+
+/**
+ * 18.规则的底部导航栏
+ */
 import 'package:flutter/material.dart';
+import 'demo01/bottom_navigator_bar.dart';
 
 void main() => runApp(MyApp());
 
@@ -767,28 +806,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Static Images Demo',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Welcome to Flutter'),
-        ),
-        body: Container(
-          margin: EdgeInsets.all(20.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              Image.asset(
-                'images/015939.png',
-                width: 100.0,
-              ),
-              Image.asset(
-                'images/5020010.png',
-                width: 100.0,
-              ),
-            ],
-          ),
-        ),
-      ),
+      title: 'FLutter BottomNavigatorBar Demo',
+      theme: ThemeData.light(),
+      home: MyBottomNavigationBar(),
     );
   }
 }
