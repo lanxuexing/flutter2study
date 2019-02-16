@@ -684,71 +684,109 @@
 /**
  * 16.Navigator callback
  */
+// import 'package:flutter/material.dart';
+
+// void main() => runApp(MaterialApp(
+//   title: '导航器回调示例',
+//   home: FirstPage(),
+// ));
+
+// class FirstPage extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('FirstPage'),
+//       ),
+//       body: Center(
+//         child: RouteBotton(),
+//       ),
+//     );
+//   }
+// }
+
+// class RouteBotton extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       child: RaisedButton(
+//         onPressed: (){
+//           _navigatorToProductList(context);
+//         },
+//         child: Text('去购买商品'),
+//       ),
+//     );
+//   }
+
+//   _navigatorToProductList(BuildContext context) async {
+//     final result = await Navigator.push(context, MaterialPageRoute(builder: (context) => ProductList()));
+//     Scaffold.of(context).showSnackBar(SnackBar(
+//       content: Text('$result'),
+//     ));
+//   }
+// }
+
+// class ProductList extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('ProductListPage'),
+//       ),
+//       body: Center(
+//         child: Column(
+//           children: <Widget>[
+//             RaisedButton(
+//               child: Text('英语流利说'),
+//               onPressed: (){
+//                 Navigator.pop(context, '您购买的课程是：英语流利说');
+//               },
+//             ),
+//             RaisedButton(
+//               child: Text('喜马拉拉电台'),
+//               onPressed: (){
+//                 Navigator.pop(context, '您购买的课程是：喜马拉拉电台');
+//               },
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+
+/**
+ * 17.Static Images
+ */
 import 'package:flutter/material.dart';
 
-void main() => runApp(MaterialApp(
-  title: '导航器回调示例',
-  home: FirstPage(),
-));
+void main() => runApp(MyApp());
 
-class FirstPage extends StatelessWidget {
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('FirstPage'),
-      ),
-      body: Center(
-        child: RouteBotton(),
-      ),
-    );
-  }
-}
-
-class RouteBotton extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: RaisedButton(
-        onPressed: (){
-          _navigatorToProductList(context);
-        },
-        child: Text('去购买商品'),
-      ),
-    );
-  }
-
-  _navigatorToProductList(BuildContext context) async {
-    final result = await Navigator.push(context, MaterialPageRoute(builder: (context) => ProductList()));
-    Scaffold.of(context).showSnackBar(SnackBar(
-      content: Text('$result'),
-    ));
-  }
-}
-
-class ProductList extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('ProductListPage'),
-      ),
-      body: Center(
-        child: Column(
-          children: <Widget>[
-            RaisedButton(
-              child: Text('英语流利说'),
-              onPressed: (){
-                Navigator.pop(context, '您购买的课程是：英语流利说');
-              },
-            ),
-            RaisedButton(
-              child: Text('喜马拉拉电台'),
-              onPressed: (){
-                Navigator.pop(context, '您购买的课程是：喜马拉拉电台');
-              },
-            ),
-          ],
+    return MaterialApp(
+      title: 'Static Images Demo',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Welcome to Flutter'),
+        ),
+        body: Container(
+          margin: EdgeInsets.all(20.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Image.asset(
+                'images/015939.png',
+                width: 100.0,
+              ),
+              Image.asset(
+                'images/5020010.png',
+                width: 100.0,
+              ),
+            ],
+          ),
         ),
       ),
     );
