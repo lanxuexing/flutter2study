@@ -638,16 +638,43 @@ class ProductList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Welcome to Flutter'),
+        title: Text('商品列表'),
       ),
       body: ListView.builder(
         itemCount: products.length,
         itemBuilder: (context, index) {
           return ListTile(
             title: Text(products[index].title),
-            onTap: (){},
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context) => ProductDetail(
+                  product: products[index]
+                )
+              ));
+            },
           );
         },
+      ),
+    );
+  }
+}
+
+class ProductDetail extends StatelessWidget {
+  final Product product;
+
+  ProductDetail({
+    Key key,
+    @required this.product
+  }):super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('${product.title}'),
+      ),
+      body: Center(
+        child: Text('${product.desc}'),
       ),
     );
   }
