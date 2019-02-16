@@ -604,77 +604,152 @@
 /**
  * 15.Navigator Parmas
  */
+// import 'package:flutter/material.dart';
+
+// void main() => runApp(MyApp());
+
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Flutter Navigator Params Demo',
+//       home: ProductList(
+//         products: List.generate(20, (i) => Product('商品 $i', '这是一个商品详情, 商品编号为: $i'))
+//       ),
+//     );
+//   }
+// }
+
+// class Product {
+//   final String title;
+//   final String desc;
+//   Product(this.title, this.desc);
+// }
+
+// class ProductList extends StatelessWidget {
+//   final List<Product> products;
+
+//   ProductList({
+//     Key key,
+//     @required this.products
+//   }):super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('商品列表'),
+//       ),
+//       body: ListView.builder(
+//         itemCount: products.length,
+//         itemBuilder: (context, index) {
+//           return ListTile(
+//             title: Text(products[index].title),
+//             onTap: (){
+//               Navigator.push(context, MaterialPageRoute(
+//                 builder: (context) => ProductDetail(
+//                   product: products[index]
+//                 )
+//               ));
+//             },
+//           );
+//         },
+//       ),
+//     );
+//   }
+// }
+
+// class ProductDetail extends StatelessWidget {
+//   final Product product;
+
+//   ProductDetail({
+//     Key key,
+//     @required this.product
+//   }):super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('${product.title}'),
+//       ),
+//       body: Center(
+//         child: Text('${product.desc}'),
+//       ),
+//     );
+//   }
+// }
+
+
+/**
+ * 16.Navigator callback
+ */
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(MaterialApp(
+  title: '导航器回调示例',
+  home: FirstPage(),
+));
 
-class MyApp extends StatelessWidget {
+class FirstPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Navigator Params Demo',
-      home: ProductList(
-        products: List.generate(20, (i) => Product('商品 $i', '这是一个商品详情, 商品编号为: $i'))
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('FirstPage'),
+      ),
+      body: Center(
+        child: RouteBotton(),
       ),
     );
   }
 }
 
-class Product {
-  final String title;
-  final String desc;
-  Product(this.title, this.desc);
+class RouteBotton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: RaisedButton(
+        onPressed: (){
+          _navigatorToProductList(context);
+        },
+        child: Text('去购买商品'),
+      ),
+    );
+  }
+
+  _navigatorToProductList(BuildContext context) async {
+    final result = await Navigator.push(context, MaterialPageRoute(builder: (context) => ProductList()));
+    Scaffold.of(context).showSnackBar(SnackBar(
+      content: Text('$result'),
+    ));
+  }
 }
 
 class ProductList extends StatelessWidget {
-  final List<Product> products;
-
-  ProductList({
-    Key key,
-    @required this.products
-  }):super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('商品列表'),
-      ),
-      body: ListView.builder(
-        itemCount: products.length,
-        itemBuilder: (context, index) {
-          return ListTile(
-            title: Text(products[index].title),
-            onTap: (){
-              Navigator.push(context, MaterialPageRoute(
-                builder: (context) => ProductDetail(
-                  product: products[index]
-                )
-              ));
-            },
-          );
-        },
-      ),
-    );
-  }
-}
-
-class ProductDetail extends StatelessWidget {
-  final Product product;
-
-  ProductDetail({
-    Key key,
-    @required this.product
-  }):super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('${product.title}'),
+        title: Text('ProductListPage'),
       ),
       body: Center(
-        child: Text('${product.desc}'),
+        child: Column(
+          children: <Widget>[
+            RaisedButton(
+              child: Text('英语流利说'),
+              onPressed: (){
+                Navigator.pop(context, '您购买的课程是：英语流利说');
+              },
+            ),
+            RaisedButton(
+              child: Text('喜马拉拉电台'),
+              onPressed: (){
+                Navigator.pop(context, '您购买的课程是：喜马拉拉电台');
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
