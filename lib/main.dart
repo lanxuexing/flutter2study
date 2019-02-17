@@ -947,10 +947,32 @@
 
 
 /**
- * 25.可展开的卡片
+ * 25.可展开的卡片(单个)
+ */
+// import 'package:flutter/material.dart';
+// import 'demo08/expansion_tile.dart';
+
+// void main() => runApp(MyApp());
+
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Flutter Demo',
+//       theme: ThemeData(
+//         primarySwatch: Colors.lightBlue
+//       ),
+//       home: MyExpansionTile(),
+//     );
+//   }
+// }
+
+
+/**
+ * 26.可展开的列表卡片
  */
 import 'package:flutter/material.dart';
-import 'demo08/expansion_tile.dart';
+import 'demo09/expansion_panel_list.dart';
 
 void main() => runApp(MyApp());
 
@@ -958,11 +980,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.lightBlue
-      ),
-      home: MyExpansionTile(),
+      title: 'Flutter Expansion Panel List Demo',
+      theme: ThemeData.light(),
+      home: MyExpansionPanelList(),
     );
   }
 }
