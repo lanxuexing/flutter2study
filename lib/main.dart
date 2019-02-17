@@ -1035,8 +1035,30 @@
 /**
  * 29.闪屏页动画
  */
+// import 'package:flutter/material.dart';
+// import 'demo12/splash.dart';
+
+// void main() => runApp(MyApp());
+
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Flutter Splash Demo',
+//       theme: ThemeData(
+//         primarySwatch: Colors.lightBlue,
+//       ),
+//       home: SplashPage(),
+//     );
+//   }
+// }
+
+
+/**
+ * 30.右滑返回
+ */
 import 'package:flutter/material.dart';
-import 'demo12/splash.dart';
+import 'demo13/right_back.dart';
 
 void main() => runApp(MyApp());
 
@@ -1044,11 +1066,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Splash Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.lightBlue,
-      ),
-      home: SplashPage(),
+      title: 'Flutter Right Back Demo',
+      theme: ThemeData.light(),
+      home: RightBack(),
     );
   }
 }
