@@ -863,20 +863,42 @@
 /**
  * 21.毛玻璃效果
  */
+// import 'package:flutter/material.dart';
+// import 'demo04/frosted_class.dart';
+
+// void main() => runApp(MyApp());
+
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext cotext) {
+//     return MaterialApp(
+//       title: 'Flutter Demo',
+//       theme: ThemeData(
+//         primarySwatch: Colors.lightBlue
+//       ),
+//       home: MyFrostedClassPage(),
+//     );
+//   }
+// }
+
+
+/**
+ * 22.Keep Alive
+ */
 import 'package:flutter/material.dart';
-import 'demo04/frosted_class.dart';
+import 'demo05/keep_alive.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
-  Widget build(BuildContext cotext) {
+  Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Flutter Keep Alive Demo',
       theme: ThemeData(
         primarySwatch: Colors.lightBlue
       ),
-      home: MyFrostedClassPage(),
+      home: MyKeepAlive(),
     );
   }
 }
