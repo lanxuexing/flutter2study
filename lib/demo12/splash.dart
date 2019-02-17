@@ -21,7 +21,7 @@ class _SplashPageState extends State<SplashPage> with SingleTickerProviderStateM
       end: 1.0,
     ).animate(_controller);
     _animation.addStatusListener((status) { // 动画监听器
-      if (status ==AnimationStatus.completed) {
+      if (status == AnimationStatus.completed) {
         Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(
           builder: (context) => HomePage()),
           (route) => route == null,
