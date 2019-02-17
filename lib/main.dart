@@ -929,8 +929,28 @@
 /**
  * 24.Wrap流式布局
  */
+// import 'package:flutter/material.dart';
+// import 'demo07/wrap.dart';
+
+// void main() => runApp(MyApp());
+
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Flutter Wrap Demo',
+//       theme: ThemeData.light(),
+//       home: MyWrap(),
+//     );
+//   }
+// }
+
+
+/**
+ * 25.可展开的卡片
+ */
 import 'package:flutter/material.dart';
-import 'demo07/wrap.dart';
+import 'demo08/expansion_tile.dart';
 
 void main() => runApp(MyApp());
 
@@ -938,9 +958,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Wrap Demo',
-      theme: ThemeData.light(),
-      home: MyWrap(),
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.lightBlue
+      ),
+      home: MyExpansionTile(),
     );
   }
 }
