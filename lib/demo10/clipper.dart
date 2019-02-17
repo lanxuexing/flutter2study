@@ -12,7 +12,7 @@ class ClipperPage extends StatelessWidget {
           ClipPath( // 路径裁切部件
             clipper: MyClipper(),
             child: Container(
-              color: Colors.deepPurple,
+              color: Colors.deepPurpleAccent,
               height: 200.0,
             ),
           )
