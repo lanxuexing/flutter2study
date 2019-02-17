@@ -971,8 +971,29 @@
 /**
  * 26.可展开的列表卡片
  */
+// import 'package:flutter/material.dart';
+// import 'demo09/expansion_panel_list.dart';
+
+// void main() => runApp(MyApp());
+
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Flutter Expansion Panel List Demo',
+//       theme: ThemeData.light(),
+//       home: MyExpansionPanelList(),
+//     );
+//   }
+// }
+
+
+/**
+ * 27.贝塞尔曲线
+ */
 import 'package:flutter/material.dart';
-import 'demo09/expansion_panel_list.dart';
+import 'demo10/clipper.dart';
+
 
 void main() => runApp(MyApp());
 
@@ -980,9 +1001,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Expansion Panel List Demo',
+      title: 'Flutter Demo',
       theme: ThemeData.light(),
-      home: MyExpansionPanelList(),
+      debugShowCheckedModeBanner: false, // 去掉手机左上角的debug图标
+      home: ClipperPage(),
     );
   }
 }
