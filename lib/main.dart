@@ -885,8 +885,30 @@
 /**
  * 22.Keep Alive
  */
+// import 'package:flutter/material.dart';
+// import 'demo05/keep_alive.dart';
+
+// void main() => runApp(MyApp());
+
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Flutter Keep Alive Demo',
+//       theme: ThemeData(
+//         primarySwatch: Colors.lightBlue
+//       ),
+//       home: MyKeepAlive(),
+//     );
+//   }
+// }
+
+
+/**
+ * 23.Search
+ */
 import 'package:flutter/material.dart';
-import 'demo05/keep_alive.dart';
+import 'demo06/search_box.dart';
 
 void main() => runApp(MyApp());
 
@@ -894,11 +916,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Keep Alive Demo',
+      title: 'Flutter Search Demo',
       theme: ThemeData(
         primarySwatch: Colors.lightBlue
       ),
-      home: MyKeepAlive(),
+      home: SearchBox(),
     );
   }
 }
