@@ -1057,8 +1057,28 @@
 /**
  * 30.右滑返回
  */
+// import 'package:flutter/material.dart';
+// import 'demo13/right_back.dart';
+
+// void main() => runApp(MyApp());
+
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Flutter Right Back Demo',
+//       theme: ThemeData.light(),
+//       home: RightBack(),
+//     );
+//   }
+// }
+
+
+/**
+ * 31.ToolTip提示
+ */
 import 'package:flutter/material.dart';
-import 'demo13/right_back.dart';
+import 'demo14/tool_tip.dart';
 
 void main() => runApp(MyApp());
 
@@ -1066,9 +1086,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Right Back Demo',
-      theme: ThemeData.light(),
-      home: RightBack(),
+      title: 'Flutter ToolTip Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.lightBlue
+      ),
+      home: MyToolTip(),
     );
   }
 }
