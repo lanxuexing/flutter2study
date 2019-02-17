@@ -907,8 +907,30 @@
 /**
  * 23.Search
  */
+// import 'package:flutter/material.dart';
+// import 'demo06/search_box.dart';
+
+// void main() => runApp(MyApp());
+
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Flutter Search Demo',
+//       theme: ThemeData(
+//         primarySwatch: Colors.lightBlue
+//       ),
+//       home: SearchBox(),
+//     );
+//   }
+// }
+
+
+/**
+ * 24.Wrap流式布局
+ */
 import 'package:flutter/material.dart';
-import 'demo06/search_box.dart';
+import 'demo07/wrap.dart';
 
 void main() => runApp(MyApp());
 
@@ -916,11 +938,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Search Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.lightBlue
-      ),
-      home: SearchBox(),
+      title: 'Flutter Wrap Demo',
+      theme: ThemeData.light(),
+      home: MyWrap(),
     );
   }
 }
