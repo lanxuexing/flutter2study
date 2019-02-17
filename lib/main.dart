@@ -991,9 +991,26 @@
 /**
  * 27.贝塞尔曲线
  */
-import 'package:flutter/material.dart';
-import 'demo10/clipper.dart';
+// import 'package:flutter/material.dart';
+// import 'demo10/clipper.dart';
 
+
+// void main() => runApp(MyApp());
+
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Flutter Demo',
+//       theme: ThemeData.light(),
+//       debugShowCheckedModeBanner: false, // 去掉手机左上角的debug图标
+//       home: ClipperPage(),
+//     );
+//   }
+// }
+
+import 'package:flutter/material.dart';
+import 'demo11/curve_clipper.dart';
 
 void main() => runApp(MyApp());
 
@@ -1001,10 +1018,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData.light(),
-      debugShowCheckedModeBanner: false, // 去掉手机左上角的debug图标
-      home: ClipperPage(),
+      title: 'Flutter Clipper Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.lightBlue,
+      ),
+      home: MyCurveClipper(),
     );
   }
 }
