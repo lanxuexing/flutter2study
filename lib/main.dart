@@ -817,22 +817,66 @@
 /**
  * 19.不规则的底部导航栏
  */
+// import 'package:flutter/material.dart';
+// import 'demo02/bottom_navigator_bar.dart';
+
+// void main() => runApp(MyApp());
+
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       child: MaterialApp(
+//         title: 'Flutter BottomNavigator Demo',
+//         theme: ThemeData( //  自定义主题
+//           primarySwatch: Colors.lightBlue
+//         ),
+//         home: MyBottomNavigatorBar(),
+//       ),
+//     );
+//   }
+// }
+
+
+/**
+ * 20.路由动画
+ */
+// import 'package:flutter/material.dart';
+// import 'demo03/page.dart';
+
+// void main() => runApp(MyApp());
+
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Flutter Router Animate Demo',
+//       theme: ThemeData(
+//         primarySwatch: Colors.lightBlue
+//       ),
+//       home: FirstPage(),
+//     );
+//   }
+// }
+
+
+/**
+ * 21.毛玻璃效果
+ */
 import 'package:flutter/material.dart';
-import 'demo02/bottom_navigator_bar.dart';
+import 'demo04/frosted_class.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: MaterialApp(
-        title: 'Flutter BottomNavigator Demo',
-        theme: ThemeData( //  自定义主题
-          primarySwatch: Colors.lightBlue
-        ),
-        home: MyBottomNavigatorBar(),
+  Widget build(BuildContext cotext) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.lightBlue
       ),
+      home: MyFrostedClassPage(),
     );
   }
 }
