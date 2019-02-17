@@ -1077,8 +1077,30 @@
 /**
  * 31.ToolTip提示
  */
+// import 'package:flutter/material.dart';
+// import 'demo14/tool_tip.dart';
+
+// void main() => runApp(MyApp());
+
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Flutter ToolTip Demo',
+//       theme: ThemeData(
+//         primarySwatch: Colors.lightBlue
+//       ),
+//       home: MyToolTip(),
+//     );
+//   }
+// }
+
+
+/**
+ * 32.拖拽
+ */
 import 'package:flutter/material.dart';
-import 'demo14/tool_tip.dart';
+import 'demo15/home.dart';
 
 void main() => runApp(MyApp());
 
@@ -1086,11 +1108,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter ToolTip Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.lightBlue
-      ),
-      home: MyToolTip(),
+      title: 'Flutter Draggable Demo',
+      theme: ThemeData.light(),
+      home: HomePage(),
     );
   }
 }
