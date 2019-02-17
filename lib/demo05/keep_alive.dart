@@ -5,7 +5,7 @@ class MyKeepAlive extends StatefulWidget {
   _MyKeepAliveState createState() => _MyKeepAliveState();
 }
 
-class _MyKeepAliveState extends State<MyKeepAlive> with SingleTickerProviderStateMixin {
+class _MyKeepAliveState extends State<MyKeepAlive> with SingleTickerProviderStateMixin { // with混入，初始化状态vsync
   TabController _controller;
 
   @override
