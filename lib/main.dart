@@ -1099,8 +1099,28 @@
 /**
  * 32.拖拽
  */
+// import 'package:flutter/material.dart';
+// import 'demo15/home.dart';
+
+// void main() => runApp(MyApp());
+
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Flutter Draggable Demo',
+//       theme: ThemeData.light(),
+//       home: HomePage(),
+//     );
+//   }
+// }
+
+
+/**
+ * 33.布局（Row、Column、ListView、Container、Padding、Flexible）
+ */
 import 'package:flutter/material.dart';
-import 'demo15/home.dart';
+import 'layout01/layout.dart';
 
 void main() => runApp(MyApp());
 
@@ -1108,9 +1128,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Draggable Demo',
-      theme: ThemeData.light(),
-      home: HomePage(),
+      title: 'Flutter Layout Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.lightBlue
+      ),
+      home: LayoutPage(),
     );
   }
 }
