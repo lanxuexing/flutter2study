@@ -1119,8 +1119,30 @@
 /**
  * 33.布局（Row、Column、ListView、Container、Padding、Flexible）
  */
+// import 'package:flutter/material.dart';
+// import 'layout01/layout.dart';
+
+// void main() => runApp(MyApp());
+
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Flutter Layout Demo',
+//       theme: ThemeData(
+//         primarySwatch: Colors.lightBlue
+//       ),
+//       home: LayoutPage(),
+//     );
+//   }
+// }
+
+
+/**
+ * 34.液体进度球
+ */
 import 'package:flutter/material.dart';
-import 'layout01/layout.dart';
+import 'widget/liquid/page.dart';
 
 void main() => runApp(MyApp());
 
@@ -1128,11 +1150,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Layout Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.lightBlue
-      ),
-      home: LayoutPage(),
+      title: 'Flutter Liquid Widget Demo',
+      theme: ThemeData.light(),
+      home: LiquidPage(),
     );
   }
 }

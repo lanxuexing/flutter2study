@@ -133,7 +133,6 @@ class LayoutPage extends StatelessWidget {
                         cursorColor: Colors.redAccent,
                         focusNode: FocusNode(),
                         style: TextStyle(),
-                        backgroundCursorColor: Colors.lightBlue,
                         onChanged: (result) {
                           print(result);
                           print('您输入的是：' + editableText.text);
