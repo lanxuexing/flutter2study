@@ -47,9 +47,41 @@ class LiquidButtonState extends State<LiquidButton> with TickerProviderStateMixi
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-       child: Text(''),
+    if (painterStatus ==PainterStatus.wave) {
+      _controller.value = widget.progress;
+    }
+    return GestureDetector(
+      onTap: () {
+        _onTap();
+      },
+      child: Transform.scale( // 过渡动画--缩放
+        scale: painterStatus == PainterStatus.download ? _download.value : (painterStatus == PainterStatus.tick ? _finishScale.value : 1.0),
+        child: CustomPaint(
+          size: widget.size,
+          painter: WavePainter(
+            painterStatus: painterStatus,
+            waveProgress: _wave.value,
+            finishBubblesProgress: _finishBubbles.value,
+          ),
+        ),
+      ),
     );
+  }
+
+  void _onTap() {
+    if (_controllerStart.isAnimating || _controller.isAnimating || _controllerEnd.isAnimating) {
+      return;
+    }
+    if (painterStatus == PainterStatus.download) {
+      _controllerStart.reset();
+      _controllerStart.forward();
+    }
+  }
+
+  void resetStatus() {
+    painterStatus = PainterStatus.download;
+    _controllerStart.reset();
+    setState(() {});
   }
 
   // 初始化下载
@@ -117,7 +149,7 @@ class LiquidButtonState extends State<LiquidButton> with TickerProviderStateMixi
     )..addListener(() {
       setState(() {});
     })..addStatusListener((status) {
-      if (status == AnimationStatus.completed) {
+      if (status == AnimationStatus.completed) { // 动画监听（完成时）
         if (widget.onDownLoadEnd != null) {
           widget.onDownLoadEnd();
         }
