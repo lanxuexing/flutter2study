@@ -1141,8 +1141,29 @@
 /**
  * 34.液体进度球
  */
+// import 'package:flutter/material.dart';
+// import 'widget/liquid/page.dart';
+
+// void main() => runApp(MyApp());
+
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Flutter Liquid Widget Demo',
+//       theme: ThemeData.light(),
+//       home: LiquidPage(),
+//     );
+//   }
+// }
+
+
+/**
+ * 35.限制性类型容器布局
+ */
 import 'package:flutter/material.dart';
-import 'widget/liquid/page.dart';
+// import 'layout02/constrained_widget.dart';
+import 'layout02/tabbar_widget.dart';
 
 void main() => runApp(MyApp());
 
@@ -1152,7 +1173,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Liquid Widget Demo',
       theme: ThemeData.light(),
-      home: LiquidPage(),
+      // home: ConstrainedWidget(), // constrained_widget.dart
+      home: TabbarWidget(), // tabbar_widget.dart
     );
   }
 }
